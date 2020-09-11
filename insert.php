@@ -16,8 +16,10 @@ try{
     $conn=new PDO("mysql:host=$servername;dbname=$dbname",$username,$password);
     $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
     echo "connected";
-    $sql="INSERT INTO DMSV (MaSV,HoSV,TenSV,Phai,NgaySinh,NoiSinh,MaKhoa,HocBong) values ($MaSV, $HoSV, $TenSV, $Phai,$NgaySinh, $NoiSinh,$Khoa,$HocBong_f)";
-    $conn->exec($sql);
+    $arr=[$MaSV, $HoSV, $TenSV, $Phai,$NgaySinh, $NoiSinh,$Khoa,$HocBong];
+    $sql="INSERT INTO DMSV (MaSV,HoSV,TenSV,Phai,NgaySinh,NoiSinh,MaKhoa,HocBong) values (?,?,?,?,?,?,?,?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute($arr);
     include("insert.html");
 
 }catch(PDOException $e){
