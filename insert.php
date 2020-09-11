@@ -1,4 +1,5 @@
 <?php
+include("main.php");
 $servername="localhost";
 $username="root";
 $password="Huudinh98@";
@@ -15,16 +16,14 @@ $HocBong_f=floatval($HocBong);
 try{
     $conn=new PDO("mysql:host=$servername;dbname=$dbname",$username,$password);
     $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-    echo "connected";
     $arr=[$MaSV, $HoSV, $TenSV, $Phai,$NgaySinh, $NoiSinh,$Khoa,$HocBong];
     $sql="INSERT INTO DMSV (MaSV,HoSV,TenSV,Phai,NgaySinh,NoiSinh,MaKhoa,HocBong) values (?,?,?,?,?,?,?,?)";
     $stmt = $conn->prepare($sql);
     $stmt->execute($arr);
-    include("insert.html");
+    include("index.html");
 
 }catch(PDOException $e){
     echo $e->getMessage();
 }
-
 
 ?>
