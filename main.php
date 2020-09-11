@@ -14,6 +14,7 @@ try {
     // $test= $stmt->setFetchMode(PDO::FETCH_ASSOC);
     $test=$stmt->fetchAll();
     // echo print_r($test, true);
+    $conn=null;
 }
 catch(PDOException $e) {
     echo "Error: " . $e->getMessage();

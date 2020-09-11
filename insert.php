@@ -20,6 +20,8 @@ try{
     $sql="INSERT INTO DMSV (MaSV,HoSV,TenSV,Phai,NgaySinh,NoiSinh,MaKhoa,HocBong) values (?,?,?,?,?,?,?,?)";
     $stmt = $conn->prepare($sql);
     $stmt->execute($arr);
+    $conn=null;
+    echo "insert success";
     include("index.html");
 
 }catch(PDOException $e){

@@ -11,21 +11,21 @@
   </head>
   <body>
       <div class="container bg-light mt-5 rounded w-50 mb-5 p-4 shadow" >
-          <form action="insert.php" method="POST">
+          <form action="index.php" method="POST">
               <div class="form-group">
                 <label for="">Mã sinh viên:</label>
                 <input type="text"
-                  class="form-control" name="MaSV" id="MaSV" placeholder="Mã sinh viên" autofocus>
+                  class="form-control" name="MaSV" id="MaSV" placeholder="Mã sinh viên" autofocus required>
               </div>
               <div class="form-group">
                 <label for="">Họ:</label>
                 <input type="text"
-                  class="form-control" name="HoSV" id="HoSV" placeholder="Họ">
+                  class="form-control" name="HoSV" id="HoSV" placeholder="Họ" required>
               </div>
               <div class="form-group">
                 <label for="">Tên</label>
                 <input type="text"
-                  class="form-control" name="TenSV" id="TenSV" placeholder="Tên">
+                  class="form-control" name="TenSV" id="TenSV" placeholder="Tên" required>
               </div>
               
               <label class="mr-4">Giới tính: </label>
@@ -42,12 +42,12 @@
               <div class="form-group">
                 <label for="">Ngày sinh: </label>
                 <input type="text"
-                  class="form-control" name="NgaySinh" id="NgaySinh" placeholder="yy/mm/dd">
+                  class="form-control" name="NgaySinh" id="NgaySinh" placeholder="yy/mm/dd" required>
               </div>
               <div class="form-group">
                 <label for="">Nơi sinh:</label>
                 <input type="text"
-                  class="form-control" name="NoiSinh" id="NoiSinh" placeholder="Nơi sinh">
+                  class="form-control" name="NoiSinh" id="NoiSinh" placeholder="Nơi sinh" required>
               </div>
               <div class="form-group">
                 <label for="sel1">Khoa:</label>
@@ -63,8 +63,8 @@
                 <input type="text"
                   class="form-control" name="HocBong" id="HocBong" placeholder="Học bổng">
               </div>
-              <button type="submit" name="" id="" class="btn btn-primary rounded shadow" > insert</button>
-              <?php echo "insert thanh cong"?>
+              <button type="submit" name="submit" id="submit" value="submit" class="btn btn-primary rounded shadow" > insert</button>
+              
           </form>
       </div>
       
