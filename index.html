@@ -30,6 +30,7 @@
               <tbody>
                 <?php
                 foreach($result as $key=>$val){
+                        $id=$val['MaSV'];
                         echo "<tr>";
                         echo "<td>". $val['MaSV'] ."</td>";
                         echo "<td>". $val['HoSV'] ."</td>";
@@ -39,6 +40,12 @@
                         echo "<td>". $val['NoiSinh'] ."</td>";
                         echo "<td>". $val['TenKhoa'] ."</td>";
                         echo "<td>". $val['HocBong'] ."</td>";
+                        echo "<td>";
+                          echo "<a href='delete.php?id=$id' type='button' class='btn btn-danger'>Delete</a>";
+                        echo"</td>";
+                        echo "<td>";
+                          echo "<a href='Show_data_update.php?id=$id' type='button' class='btn btn-success'>Edit</a>";
+                        echo"</td>";
                         echo "</tr>";
                 }
                 ?>
