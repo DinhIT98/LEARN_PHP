@@ -1,10 +1,17 @@
 <?php
+session_start();
 include_once("DB.php");
 $DB=new ConnectDB();
 $result =$DB->select();
-if($result){
-    include("index.html");
+$now=time();
+if($_SESSION && $now<$_SESSION['expire']){
+    if($result){
+        include("index.html");
+    }else{
+        echo "<script>alert('No data to show')</script>";
+    }
 }else{
-    echo "<script>alert('No data to show')</script>";
+    session_destroy();
+    include("sign_in.html");
 }
 ?>

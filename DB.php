@@ -54,5 +54,13 @@ class ConnectDB{
         $stmt->execute();
         return $stmt;
     }
+    public function selectByEmail($email){
+        $sql="SELECT PASS_WORD FROM USERS WHERE EMAIL='$email'";
+        $stmt=$this->connect->prepare($sql);
+        $stmt->execute();
+        $result=$stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $result=$stmt->fetchAll();
+        return $result;
+    }
 }
 ?>
